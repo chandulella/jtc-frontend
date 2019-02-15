@@ -8,9 +8,9 @@ const app=express();
 //     res.sendFile(path.join(__dirname + '/dist/frntend/index.html'));
 // });
 
-app.use(express.static(__dirname+'/dist/jtc-frontend', {index: false}));
+app.use(express.static(__dirname+'/dist/jtc-frontend'));
 app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'dist/jtc-frontend', 'index.html'));
+	response.sendFile(path.join(__dirname, '/dist/jtc-frontend', 'index.html'));
 });
 
 app.listen(process.env.PORT || 8080,()=>{
