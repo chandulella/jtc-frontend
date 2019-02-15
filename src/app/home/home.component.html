@@ -1,0 +1,61 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">ToPost</a>
+  <form class="form-inline">
+    <button class="btn btn-outline-success" type="submit" data-toggle="modal" data-target="#add-new-post">
+      Add Post
+    </button>
+  </form>
+</nav>
+
+<body>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h2>Posts</h2>
+      <div class="card" *ngFor="let post of posts; let i=index">
+        <div class="card-body">
+          <h5 class="card-title">{{post.name}}</h5>
+          <p class="card-text">{{post.description}}</p>
+          <a href="#" (click)="updateLike(i,post.option)" [class]="post.option?'btn btn-primary':'btn btn-light'"><i
+              class="fa fa-thumbs-up"></i></a>
+          <span>{{post.likes}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <div class="modal" id="add-new-post" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Post</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+            <div>
+              <label>Name</label>
+              <input type="email" formControlName="name" class="form-control" id="exampleInputEmail1" placeholder="Enter name" />
+            </div>
+            <div>
+              <label>Description</label>
+              <textarea placeholder="enter description" class="form-control" type="text" formControlName="description"
+                col="5" row="5"></textarea>
+            </div>
+            <div>
+              <button id="btnCreatePost" [disabled]="!postForm.valid" (click)="postForm.valid && onSubmit()" type="submit" class="btn btn-primary">Create Post</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
