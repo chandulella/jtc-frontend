@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinsall":"ng build"
   },
   "private": true,
   "dependencies": {
@@ -48,5 +49,9 @@
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines":{
+    "node":"v8.15.0",
+    "npm":"6.4.1"
+    }
 }
