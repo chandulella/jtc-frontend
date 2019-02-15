@@ -19,13 +19,13 @@ export class UserBaseService extends ApiServiceService {
     return this.eventEmitter;
   }
   createPost(data :any): Observable<any>{
-    return this.http.post('http://jtc-backend1.herokuapp.com/api/v1/createPost',data,this.post())
+    return this.http.post('https://jtc-backend1.herokuapp.com/api/v1/createPost',data,this.post())
     .pipe(map(res => res.json()),catchError(err=>  throwError(err)))
   }
   getPosts(): Observable<any>{
-    return this.http.get('http://jtc-backend1.herokuapp.com/api/v1/getPosts',this.get()).pipe(map(res => res.json()),catchError(err=>  throwError(err)))
+    return this.http.get('https://jtc-backend1.herokuapp.com/api/v1/getPosts',this.get()).pipe(map(res => res.json()),catchError(err=>  throwError(err)))
   }
   updatePost(data :any,value): Observable<any>{
-    return this.http.post('http://jtc-backend1.herokuapp.com/api/v1/updatePost',{post_id:data,like:value},this.post()).pipe(map(res => res.json()),catchError(err=>  throwError(err)))
+    return this.http.post('https://jtc-backend1.herokuapp.com/api/v1/updatePost',{post_id:data,like:value},this.post()).pipe(map(res => res.json()),catchError(err=>  throwError(err)))
   }
 }

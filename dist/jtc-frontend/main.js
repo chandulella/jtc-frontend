@@ -352,14 +352,14 @@ var UserBaseService = /** @class */ (function (_super) {
         return this.eventEmitter;
     };
     UserBaseService.prototype.createPost = function (data) {
-        return this.http.post('http://jtc-backend1.herokuapp.com/api/v1/createPost', data, this.post())
+        return this.http.post('https://jtc-backend1.herokuapp.com/api/v1/createPost', data, this.post())
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err); }));
     };
     UserBaseService.prototype.getPosts = function () {
-        return this.http.get('http://jtc-backend1.herokuapp.com/api/v1/getPosts', this.get()).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err); }));
+        return this.http.get('https://jtc-backend1.herokuapp.com/api/v1/getPosts', this.get()).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err); }));
     };
     UserBaseService.prototype.updatePost = function (data, value) {
-        return this.http.post('http://jtc-backend1.herokuapp.com/api/v1/updatePost', { post_id: data, like: value }, this.post()).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err); }));
+        return this.http.post('https://jtc-backend1.herokuapp.com/api/v1/updatePost', { post_id: data, like: value }, this.post()).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) { return Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["throwError"])(err); }));
     };
     UserBaseService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
