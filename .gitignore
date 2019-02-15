@@ -1,0 +1,15 @@
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules*
+# IDEs and editors
+/.idea
+/.vscode
+
+# e2e
+/e2e/*.js
+/e2e/*.map
